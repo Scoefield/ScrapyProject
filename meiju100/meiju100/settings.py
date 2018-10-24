@@ -95,6 +95,9 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # redis setting
+# 使用scrapy-redis里的调度器组件，不使用默认的调度器
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+# 使用scrapy-redis里的去重组件，不使用scrapy默认的去重方式
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+# 连接远程redis数据库
 REDIS_URL = 'redis://root:123456@192.168.1.100:6379'
