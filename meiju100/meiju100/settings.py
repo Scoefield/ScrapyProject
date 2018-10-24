@@ -69,7 +69,8 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'meiju100.pipelines.Meiju100Pipeline': 300,
+   'meiju100.pipelines.Meiju100Pipeline': 301,
+   'scrapy_redis.pipelines.RedisPipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -92,3 +93,8 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# redis setting
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+REDIS_URL = 'redis://root:123456@192.168.1.100:6379'
