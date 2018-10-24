@@ -22,7 +22,7 @@ class MeijuSpider(scrapy.Spider):
             if item['movstatu']:
                 pass
             else:
-                item['movstatu'] = sub.xpath('./span[1]/text()').extract()
+                item['movstatu'] = sub.xpath('./span[1]/text()').extract_first()
 
             if item['movstation']:
                 pass
@@ -32,5 +32,5 @@ class MeijuSpider(scrapy.Spider):
             if item['movupdate']:
                 pass
             else:
-                item['movupdate'] = sub.xpath('./div[2]/font/text()').extract()
+                item['movupdate'] = sub.xpath('./div[2]/font/text()').extract_first()
             yield item
