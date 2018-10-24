@@ -14,6 +14,10 @@ BOT_NAME = 'meiju100'
 SPIDER_MODULES = ['meiju100.spiders']
 NEWSPIDER_MODULE = 'meiju100.spiders'
 
+MGO_HOST = '127.0.0.1'
+MGO_DB = 'MEIJUDATA'
+MGO_CLCTION = 'meiju100'
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'meiju100 (+http://www.yourdomain.com)'
